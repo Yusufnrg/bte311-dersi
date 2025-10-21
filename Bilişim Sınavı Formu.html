@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/ysfnr/OneDrive/Masa%C3%BCst%C3%BC/bte.html# -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilişim Sınavı Formu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white; /* Varsayılan arka plan */
+            padding: 20px;
+            color: black; /* Varsayılan yazı rengi */
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #ccc; /* Siyah-beyaz için hafif kenarlık */
+            box-shadow: none; /* Gölge yok */
+        }
+        header h1 {
+            color: black;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+        fieldset {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0; /* Köşe yuvarlaklığı yok */
+        }
+        legend {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: black;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="color"]) {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        /* Soldan Sağa Düzenleme için CSS (Üyelik Bilgileri için) */
+        .inline-group {
+            display: flex;
+            gap: 20px; /* Alanlar arası boşluk */
+        }
+        .inline-group > div {
+            flex: 1; /* Alanların eşit veya yakın genişlikte olmasını sağlar */
+        }
+        .inline-group label {
+            margin-top: 0;
+        }
+        /* /Soldan Sağa Düzenleme için CSS */
+
+        .options-group label {
+            font-weight: normal;
+            display: inline-block;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button-group input[type="submit"],
+        .button-group input[type="reset"] {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid black;
+            background-color: white;
+            cursor: pointer;
+            font-size: 14px;
+            color: black;
+        }
+        
+        /* Range input'un yanındaki değer göstergesi */
+        label[for="seviye"] span {
+            font-weight: bold;
+            margin-left: 10px;
+            color: black; 
+        }
+
+        /* Color input'a özel boyut */
+        input[type="color"] {
+            width: 40px; 
+            height: 25px;
+            padding: 0;
+            border: 1px solid black;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Sınav Formu</h1>
+        </header>
+        
+        <form action="file:///C:/Users/ysfnr/OneDrive/Masa%C3%BCst%C3%BC/bte.html#" method="post" enctype="multipart/form-data">
+
+            <section id="kayit-formu">
+                <fieldset>
+                    <legend>1. Kişisel Bilgiler</legend>
+                    
+                    <div class="inline-group">
+                        <div>
+                            <label for="adsoyad">Ad Soyad:</label>
+                            <input type="text" id="adsoyad" name="adsoyad" required="">
+                        </div>
+                        <div>
+                            <label for="dtarihi">Doğum Tarihi:</label>
+                            <input type="date" id="dtarihi" name="dtarihi">
+                        </div>
+                    </div>
+                    
+                    <div class="inline-group">
+                        <div>
+                            <label for="numara">Okul Numarası:</label>
+                            <input type="number" id="numara" name="numara" placeholder="Örn: 1001" required="">
+                        </div>
+                        <div>
+                            <label for="sinif">Sınıf Bilgisi:</label>
+                            <input type="text" id="sinif" name="sinif" placeholder="Örn: 3A" required="">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </section>
+            
+            <section id="test-sorulari">
+                <fieldset>
+                    <legend>2. Sorular</legend>
+                    
+                    <label>1. Bir web uygulamasının tarayıcıda kullanıcı etkileşimini yöneten programlama dili hangisidir?</label>
+                    <div class="options-group">
+                        <label><input type="radio" name="soru1" value="A" required=""> HTML</label>
+                        <label><input type="radio" name="soru1" value="B"> CSS</label>
+                        <label><input type="radio" name="soru1" value="C"> JavaScript</label>
+                        <label><input type="radio" name="soru1" value="D"> SQL</label>
+                    </div>
+
+                    <label>2. Bir öğeyi (element) yatay ve dikey olarak ortalamak için CSS'te hangi teknikler kullanılabilir? (Birden fazla seçeneği işaretleyin)</label>
+                    <div class="options-group">
+                        <label><input type="checkbox" name="soru2[]" value="A"> Flexbox</label>
+                        <label><input type="checkbox" name="soru2[]" value="B"> Margin: auto</label>
+                        <label><input type="checkbox" name="soru2[]" value="C"> Float</label>
+                        <label><input type="checkbox" name="soru2[]" value="D"> Grid</label>
+                    </div>
+
+                    <label for="soru3">3. Modern web standartlarına göre, tablo verisi dışındaki görsel sunum amaçlı düzenlemelerden kaçınılması gereken etiket hangisidir?</label>
+                    <input type="text" id="soru3" name="soru3" placeholder="HTML etiket adı (Örn: div)" required="">
+                    
+                    <label for="http_port">4. Standart HTTPS iletişiminde kullanılan port numarasını giriniz ve kendinizi 'Backend' bilgi seviyenize göre değerlendiriniz.</label>
+                    <input type="number" id="http_port" name="http_port" placeholder="Port numarası" min="1" max="65535" required="">
+                    
+                    <label for="seviye">Backend Bilgi Seviyesi (0-100): <span id="rangeValue">50</span></label>
+                    <input type="range" id="seviye" name="seviye" min="0" max="100" value="50" oninput="document.getElementById(&#39;rangeValue&#39;).innerText = this.value">
+
+                    <label for="vurgu_rengi">5. Web projelerinde tercih ettiğiniz ana vurgu rengini seçin ve varsa bir demo projenizin ekran görüntüsünü yükleyin.</label>
+                    
+                    <div>
+                        <label for="vurgu_rengi" style="display: inline; font-weight: normal; margin-top: 0;">Tercih Edilen Renk:
+                            <input type="color" id="vurgu_rengi" name="vurgu_rengi" value="#000000" style="width: 40px; height: 25px; vertical-align: middle;">
+                        </label>
+                    </div>
+                    
+                    <label for="proje_dosyasi">Ekran Görüntüsü:</label>
+                    <input type="file" id="proje_dosyasi" name="proje_dosyasi" accept="image/*">
+
+                </fieldset>
+            </section>
+            
+            <input type="hidden" name="form_version" value="v1.5_final">
+
+            <footer class="button-group">
+                <input type="submit" value="Formu Gönder">
+                <input type="reset" value="Sıfırla">
+            </footer>
+        </form>
+    </main>
+
+</body></html>
