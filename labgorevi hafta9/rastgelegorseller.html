@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Görevi</title>
+    <style>
+        /* Sadece temel görsel düzenleme */
+        body {
+            transition: background-color 0.5s ease; /* Renk geçişini yumuşatır */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding-top: 20px;
+        }
+
+        /* Rastgele seçilen resim */
+        #rastgeleResim img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border: 5px solid #333;
+        }
+
+        /* Göster/Gizle kısmı için genel düzen */
+        .resim-kapsayici {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .toggle-resim-alanı {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .toggle-resim-alanı img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .toggle-resim-alanı button {
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lab Görevi Uygulaması</h1>
+
+    <hr>
+
+    <h2>1. Rastgele Arka Plan Rengi ve Rastgele Resim (Sayfa Yenilendi)</h2>
+    <div id="rastgeleResim">
+        </div>
+
+    <hr>
+
+    <h2>2. Göster / Gizle Butonları</h2>
+    <div class="resim-kapsayici">
+        <div class="toggle-resim-alanı">
+            <img id="resim1" src="r1.jpg" alt="Resim 1" style="display: none;">
+            <button onclick="toggleImage('resim1')">Resim 1'i Göster/Gizle</button>
+        </div>
+
+        <div class="toggle-resim-alanı">
+            <img id="resim2" src="r2.jpg" alt="Resim 2" style="display: none;">
+            <button onclick="toggleImage('resim2')">Resim 2'yi Göster/Gizle</button>
+        </div>
+
+        <div class="toggle-resim-alanı">
+            <img id="resim3" src="r3.jpg" alt="Resim 3" style="display: none;">
+            <button onclick="toggleImage('resim3')">Resim 3'ü Göster/Gizle</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. GÖREV: Rastgele Arka Plan Rengi
+        function rastgeleRenkUret() {
+            // Hexadecimal renk kodu üretir (örn: #A3F1B4)
+            const rastgeleKod = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            document.body.style.backgroundColor = rastgeleKod;
+        }
+
+        // 2. GÖREV: 10 farklı resimden rastgele birini seçme
+        function rastgeleResimGoster() {
+            // Kullanabileceğiniz 10 farklı resmin URL'leri (örnek amaçlı Picsum kullanıldı)
+            const resimler = [
+                "https://picsum.photos/id/100/300/200",
+                "https://picsum.photos/id/200/300/200",
+                "https://picsum.photos/id/300/300/200",
+                "https://picsum.photos/id/400/300/200",
+                "https://picsum.photos/id/500/300/200",
+                "https://picsum.photos/id/600/300/200",
+                "https://picsum.photos/id/700/300/200",
+                "https://picsum.photos/id/800/300/200",
+                "https://picsum.photos/id/900/300/200",
+                "https://picsum.photos/id/1000/300/200"
+            ];
+
+            // 0 ile (resim sayısı - 1) arasında rastgele bir indeks seçer
+            const rastgeleIndex = Math.floor(Math.random() * resimler.length);
+            const secilenResimURL = resimler[rastgeleIndex];
+
+            // Resmi DOM'a (HTML'e) ekler
+            const resimAlani = document.getElementById('rastgeleResim');
+            resimAlani.innerHTML = `<img src="${secilenResimURL}" alt="Rastgele Seçilen Resim">`;
+        }
+
+        // Sayfa yüklendiğinde (veya yenilendiğinde) her iki fonksiyonu da çalıştırır
+        window.onload = function() {
+            rastgeleRenkUret();
+            rastgeleResimGoster();
+        };
+
+
+        // 3. GÖREV: Göster/Gizle Butonları
+        function toggleImage(resimId) {
+            const resim = document.getElementById(resimId);
+
+            // Resmin mevcut 'display' durumunu kontrol eder
+            if (resim.style.display === 'none' || resim.style.display === '') {
+                // Gizliyse gösterir
+                resim.style.display = 'block';
+            } else {
+                // Görünürse gizler
+                resim.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
