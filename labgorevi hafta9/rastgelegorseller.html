@@ -52,6 +52,7 @@
             color: white;
             border: none;
             border-radius: 4px;
+            margin: 2px; /* Butonlar arasına küçük boşluk ekler */
         }
     </style>
 </head>
@@ -63,32 +64,32 @@
 
     <h2>1. Rastgele Arka Plan Rengi ve Rastgele Resim (Sayfa Yenilendi)</h2>
     <div id="rastgeleResim">
-        </div>
+    </div>
 
     <hr>
 
-<h2>2. Göster / Gizle Butonları</h2>
-<div class="resim-kapsayici">
+    <h2>2. Göster / Gizle Butonları</h2>
+    <div class="resim-kapsayici">
 
-    <div class="toggle-resim-alanı">
-        <img id="resim1" src="r1.jpg" alt="Resim 1" style="display: none;">
-        <button onclick="resmiGoster('resim1')">Resim 1'i GÖSTER</button>
-        <button onclick="resmiGizle('resim1')">Resim 1'i GİZLE</button>
-    </div>
+        <div class="toggle-resim-alanı">
+            <img id="resim1" src="r1.jpg" alt="Resim 1" style="display: none;">
+            <button onclick="resmiGoster('resim1')">GÖSTER</button>
+            <button onclick="resmiGizle('resim1')">GİZLE</button>
+        </div>
 
-    <div class="toggle-resim-alanı">
-        <img id="resim2" src="r2.jpg" alt="Resim 2" style="display: none;">
-        <button onclick="resmiGoster('resim2')">Resim 2'yi GÖSTER</button>
-        <button onclick="resmiGizle('resim2')">Resim 2'yi GİZLE</button>
-    </div>
+        <div class="toggle-resim-alanı">
+            <img id="resim2" src="r2.jpg" alt="Resim 2" style="display: none;">
+            <button onclick="resmiGoster('resim2')">GÖSTER</button>
+            <button onclick="resmiGizle('resim2')">GİZLE</button>
+        </div>
 
-    <div class="toggle-resim-alanı">
-        <img id="resim3" src="r3.jpg" alt="Resim 3" style="display: none;">
-        <button onclick="resmiGoster('resim3')">Resim 3'ü GÖSTER</button>
-        <button onclick="resmiGizle('resim3')">Resim 3'ü GİZLE</button>
+        <div class="toggle-resim-alanı">
+            <img id="resim3" src="r3.jpg" alt="Resim 3" style="display: none;">
+            <button onclick="resmiGoster('resim3')">GÖSTER</button>
+            <button onclick="resmiGizle('resim3')">GİZLE</button>
+        </div>
+        
     </div>
-    
-</div>
 
     <script>
         // 1. GÖREV: Rastgele Arka Plan Rengi
@@ -100,18 +101,10 @@
 
         // 2. GÖREV: 10 farklı resimden rastgele birini seçme
         function rastgeleResimGoster() {
-            // Kullanabileceğiniz 10 farklı resmin URL'leri (örnek amaçlı Picsum kullanıldı)
+            // Kullanabileceğiniz 10 farklı resmin URL'leri
             const resimler = [
-                "1.jpg",
-                "2.jpg",
-                "3.jpg",
-                "4.jpg",
-                "5.jpg",
-                "6.jpg",
-                "7.jpg",
-                "8.jpg",
-                "9.jpg",
-                "10.jpg"
+                "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", 
+                "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"
             ];
 
             // 0 ile (resim sayısı - 1) arasında rastgele bir indeks seçer
@@ -130,22 +123,20 @@
         };
 
 
-        // 3. GÖREV: Göster/Gizle Butonları
-        function toggleImage(resimId) {
-            const resim = document.getElementById(resimId);
-
-            // Resmin mevcut 'display' durumunu kontrol eder
-            if (resim.style.display === 'none' || resim.style.display === '') {
-                // Gizliyse gösterir
-                resim.style.display = 'block';
-            } else {
-                // Görünürse gizler
-                resim.style.display = 'none';
-            }
+        // 3. GÖREV: Göster/Gizle Butonları (AYRI FONKSİYONLAR)
+        
+        // **GÖSTER** fonksiyonu: Resmin görünürlüğünü açar
+        function resmiGoster(resimId) {
+            document.getElementById(resimId).style.display = 'block';
         }
+
+        // **GİZLE** fonksiyonu: Resmin görünürlüğünü kapatır
+        function resmiGizle(resimId) {
+            document.getElementById(resimId).style.display = 'none';
+        }
+        
+        // NOT: Orijinal 'toggleImage' fonksiyonu artık kullanılmadığı için silinmiştir.
     </script>
 
 </body>
-
 </html>
-
