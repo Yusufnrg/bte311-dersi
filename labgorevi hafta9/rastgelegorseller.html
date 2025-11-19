@@ -67,23 +67,28 @@
 
     <hr>
 
-    <h2>2. Göster / Gizle Butonları</h2>
-    <div class="resim-kapsayici">
-        <div class="toggle-resim-alanı">
-            <img id="resim1" src="r1.jpg" alt="Resim 1" style="display: none;">
-            <button onclick="toggleImage('resim1')">Resim 1'i Göster/Gizle</button>
-        </div>
+<h2>2. Göster / Gizle Butonları</h2>
+<div class="resim-kapsayici">
 
-        <div class="toggle-resim-alanı">
-            <img id="resim2" src="r2.jpg" alt="Resim 2" style="display: none;">
-            <button onclick="toggleImage('resim2')">Resim 2'yi Göster/Gizle</button>
-        </div>
-
-        <div class="toggle-resim-alanı">
-            <img id="resim3" src="r3.jpg" alt="Resim 3" style="display: none;">
-            <button onclick="toggleImage('resim3')">Resim 3'ü Göster/Gizle</button>
-        </div>
+    <div class="toggle-resim-alanı">
+        <img id="resim1" src="r1.jpg" alt="Resim 1" style="display: none;">
+        <button onclick="resmiGoster('resim1')">Resim 1'i GÖSTER</button>
+        <button onclick="resmiGizle('resim1')">Resim 1'i GİZLE</button>
     </div>
+
+    <div class="toggle-resim-alanı">
+        <img id="resim2" src="r2.jpg" alt="Resim 2" style="display: none;">
+        <button onclick="resmiGoster('resim2')">Resim 2'yi GÖSTER</button>
+        <button onclick="resmiGizle('resim2')">Resim 2'yi GİZLE</button>
+    </div>
+
+    <div class="toggle-resim-alanı">
+        <img id="resim3" src="r3.jpg" alt="Resim 3" style="display: none;">
+        <button onclick="resmiGoster('resim3')">Resim 3'ü GÖSTER</button>
+        <button onclick="resmiGizle('resim3')">Resim 3'ü GİZLE</button>
+    </div>
+    
+</div>
 
     <script>
         // 1. GÖREV: Rastgele Arka Plan Rengi
@@ -143,3 +148,4 @@
 </body>
 
 </html>
+
