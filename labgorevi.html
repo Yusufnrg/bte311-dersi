@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Görevi 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fdf6e3; /* Görseldeki gibi krem rengi arka plan */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            width: 100%;
+            min-height: 400px;
+            flex-wrap: wrap;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            height: 200px; /* Animasyon alanı için yer */
+            justify-content: center;
+        }
+
+        .character {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Yüz detayları (Görseldeki karakterlere benzer basit yüzler) */
+        .eyes {
+            display: flex;
+            gap: 25px;
+            position: absolute;
+            top: 35%;
+        }
+        .eye {
+            width: 12px;
+            height: 12px;
+            background: #2c3e50;
+            border-radius: 50%;
+        }
+        .mouth {
+            background: #2c3e50;
+            position: absolute;
+            bottom: 20%;
+        }
+
+        /* 1. Yukarı aşağı gidip gelen */
+        .item1 {
+            background-color: #8e44ad; /* Mor */
+            animation: upDown 1.5s infinite ease-in-out;
+        }
+        .item1 .mouth {
+            width: 40px;
+            height: 20px;
+            border-radius: 0 0 20px 20px; /* Gülen ağız */
+        }
+        @keyframes upDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        /* 2. Büyüyüp Küçülen ve rengi değişen */
+        .item2 {
+            background-color: #e74c3c; /* Kırmızı */
+            animation: growColor 2s infinite alternate;
+        }
+        .item2 .mouth {
+            width: 30px;
+            height: 10px;
+            border-radius: 10px; /* Düz ağız */
+        }
+        @keyframes growColor {
+            0% { transform: scale(1); background-color: #e74c3c; }
+            100% { transform: scale(1.3); background-color: #f1c40f; } /* Sarıya dönüş */
+        }
+
+        /* 3. Git gide transparan değeri artan ve azalan */
+        .item3 {
+            background-color: #e056fd; /* Pembe */
+            animation: fade 2s infinite alternate;
+        }
+        .item3 .mouth {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* Şaşkın ağız */
+        }
+        @keyframes fade {
+            0% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+
+        /* 4. Sağa sola giden gelen */
+        .item4 {
+            background-color: #3498db; /* Mavi */
+            animation: leftRight 1.5s infinite ease-in-out;
+        }
+        .item4 .mouth {
+            width: 50px;
+            height: 25px;
+            border-radius: 0 0 50px 50px; /* Büyük gülüş */
+        }
+        @keyframes leftRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+        }
+
+        /* 5. Dönen */
+        .item5 {
+            background-color: #2ecc71; /* Yeşil (5. eleman) */
+            animation: spin 3s infinite linear;
+        }
+        .item5 .mouth {
+            width: 30px;
+            height: 5px;
+            border-radius: 0;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .label {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LAB GÖREVİ 1</h1>
+
+    <div class="container">
+        <!-- 1. Yukarı aşağı -->
+        <div class="wrapper">
+            <div class="character item1">
+                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="label">Yukarı Aşağı</div>
+        </div>
+
+        <!-- 2. Büyüyüp Küçülen + Renk -->
+        <div class="wrapper">
+            <div class="character item2">
+                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="label">Büyüyen & Renk Değişen</div>
+        </div>
+
+        <!-- 3. Transparan -->
+        <div class="wrapper">
+            <div class="character item3">
+                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="label">Transparanlaşan</div>
+        </div>
+
+        <!-- 4. Sağa Sola -->
+        <div class="wrapper">
+            <div class="character item4">
+                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="label">Sağa Sola</div>
+        </div>
+
+        <!-- 5. Dönen -->
+        <div class="wrapper">
+            <div class="character item5">
+                <div class="eyes"><div class="eye"></div><div class="eye"></div></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="label">Dönen</div>
+        </div>
+    </div>
+
+</body>
+</html>
