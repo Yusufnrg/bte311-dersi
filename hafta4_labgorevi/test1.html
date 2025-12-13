@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Programcılığı Vize Sınavı</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #e9ecef; 
+            padding: 20px;
+        }
+        
+        .sinav-kagidi {
+            background-color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-top: 5px solid #007bff;
+        }
+
+        h1 { text-align: center; color: #333; margin-bottom: 5px; }
+        p.aciklama { text-align: center; color: #666; font-style: italic; margin-bottom: 30px; }
+
+        .bolum {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+
+        .soru { margin-bottom: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 15px; }
+        .soru:last-child { border-bottom: none; }
+
+        label { font-weight: bold; display: block; margin-bottom: 8px; color: #495057; }
+        
+        /* Input Stilleri */
+        input[type="text"], input[type="number"], input[type="email"], input[type="url"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Radyo ve Checkbox yan yana dursun */
+        .secenek { font-weight: normal; display: inline-block; margin-right: 15px; cursor: pointer; }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #0056b3; }
+
+    </style>
+</head>
+<body>
+
+    <div class="sinav-kagidi">
+        <h1>Web Tasarım ve Programlama Sınavı</h1>
+        <p class="aciklama">Lütfen tüm alanları eksiksiz doldurunuz. Başarılar!</p>
+
+        <form action="#" method="POST">
+            
+            <div class="bolum">
+                <h3>📝 Öğrenci Bilgileri</h3>
+                
+                <div class="soru">
+                    <label>Adınız Soyadınız:</label>
+                    <input type="text" name="adsoyad" placeholder="Örn: Yusuf ..." required>
+                </div>
+                
+                <div class="soru">
+                    <label>Öğrenci Numaranız:</label>
+                    <input type="number" name="ogr_no" placeholder="Örn: 2023..." required>
+                </div>
+
+                <div class="soru">
+                    <label>E-Posta Adresiniz (Sonuçlar buraya gönderilecek):</label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="soru">
+                    <label>GitHub Profil Linkiniz (URL Input):</label>
+                    <input type="url" name="github" placeholder="https://github.com/...">
+                </div>
+
+                <div class="soru">
+                    <label>Sınav Tarihi:</label>
+                    <input type="date" name="tarih">
+                </div>
+            </div>
+
+            <div class="bolum" style="border-left-color: #ffc107;">
+                <h3>🧠 Teknik Sorular</h3>
+
+                <div class="soru">
+                    <label>1. HTML'in açılımı nedir? (Tek Seçim)</label>
+                    <label class="secenek"><input type="radio" name="s1" value="a"> Hyper Text Markup Language</label><br>
+                    <label class="secenek"><input type="radio" name="s1" value="b"> High Tech Modern Language</label><br>
+                    <label class="secenek"><input type="radio" name="s1" value="c"> Home Tool Markup Language</label>
+                </div>
+
+                <div class="soru">
+                    <label>2. Hangileri bir "Web Tarayıcısı"dır? (Çoklu Seçim)</label>
+                    <label class="secenek"><input type="checkbox" name="s2[]" value="chrome"> Google Chrome</label>
+                    <label class="secenek"><input type="checkbox" name="s2[]" value="vscode"> VS Code</label>
+                    <label class="secenek"><input type="checkbox" name="s2[]" value="firefox"> Mozilla Firefox</label>
+                    <label class="secenek"><input type="checkbox" name="s2[]" value="safari"> Safari</label>
+                </div>
+
+                <div class="soru">
+                    <label>3. En sevdiğiniz programlama dili hangisi?</label>
+                    <select name="dil">
+                        <option value="">Seçiniz...</option>
+                        <option value="php">PHP</option>
+                        <option value="js">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="csharp">C#</option>
+                    </select>
+                </div>
+
+                <div class="soru">
+                    <label>4. "Responsive Tasarım" nedir? Kısaca açıklayınız.</label>
+                    <textarea name="aciklama" rows="4" placeholder="Cevabınızı buraya yazın..."></textarea>
+                </div>
+            </div>
+
+            <div class="bolum" style="border-left-color: #17a2b8;">
+                <h3>🎨 Diğer İşlemler</h3>
+
+                <div class="soru">
+                    <label>Bu dersteki başarınızı 1 ile 100 arasında puanlayın (Range Input):</label>
+                    <input type="range" name="puan" min="0" max="100" oninput="this.nextElementSibling.value = this.value">
+                    <output>50</output>
+                </div>
+
+                <div class="soru">
+                    <label>Sınav kağıdınızın tema rengini seçin (Color Input):</label>
+                    <input type="color" name="renk" value="#007bff">
+                </div>
+
+                <div class="soru">
+                    <label>Proje dosyanızı yükleyiniz (File Input):</label>
+                    <input type="file" name="dosya">
+                </div>
+            </div>
+
+            <button type="submit">Sınavı Tamamla ve Gönder</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
