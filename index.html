@@ -163,6 +163,7 @@
             text-decoration: none;
             transition: background 0.2s ease, transform 0.2s ease;
             box-shadow: 0 8px 18px rgba(113, 92, 255, 0.25);
+            white-space: nowrap; /* Metin kaymasını engeller */
         }
 
         .view-btn[href="#"] {
@@ -177,6 +178,22 @@
         .view-btn:active {
             transform: translateY(0);
         }
+        
+        /* --- YENİ EKLENEN KISIMLAR --- */
+        /* Çoklu butonlar için kapsayıcı */
+        .multi-btn-container {
+            display: flex;
+            gap: 8px; /* Butonlar arası boşluk */
+            flex-wrap: wrap; /* Mobilde sığmazsa alta geçsin */
+            align-items: center;
+        }
+
+        /* Daha küçük buton stili (Birden fazla olunca sığması için) */
+        .view-btn.mini {
+            padding: 8px 14px;
+            font-size: 13px;
+        }
+        /* ----------------------------- */
 
         @media (max-width: 720px) {
             thead {
@@ -217,6 +234,15 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            /* Mobilde çoklu butonları alt alta veya yan yana daha düzenli göstermek için */
+            .multi-btn-container {
+                width: 100%;
+            }
+            .view-btn.mini {
+                flex: 1; /* Butonlar mobilde satırı doldursun */
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -247,80 +273,102 @@
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 2</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 3</a></td>
-                    <td data-label="Ödev Konusu">Bilişim Sınav Formu</td>
+                    <td data-label="Ödev Konusu">HTML Tablo İşlemleri</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
-                    <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/Bili%C5%9Fim%20S%C4%B1nav%C4%B1%20Formu.html
-" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
+                    <td data-label="Link">
+                        <div class="multi-btn-container">
+                            <a class="view-btn mini" href="https://yusufnrg.github.io/bte311-dersi/hafta3/tablo1.html" target="_blank" rel="noopener noreferrer">Tablo 1</a>
+                            <a class="view-btn mini" href="https://yusufnrg.github.io/bte311-dersi/hafta3/tablo3.html" target="_blank" rel="noopener noreferrer">Tablo 3</a>
+                            <a class="view-btn mini" href="https://yusufnrg.github.io/bte311-dersi/hafta3/tablo_form.html" target="_blank" rel="noopener noreferrer">Tablo Form</a>
+                        </div>
+                    </td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 4</a></td>
-                    <td data-label="Ödev Konusu">Ödev başlığı</td>
-                    <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
-                    <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
+                    <td data-label="Ödev Konusu">Form ve Sınav Sayfası</td>
+                    <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
+                    <td data-label="Link">
+                        <div class="multi-btn-container">
+                            <a class="view-btn mini" href="https://yusufnrg.github.io/bte311-dersi/hafta4/Form1.html" target="_blank" rel="noopener noreferrer">Üyelik Formu</a>
+                            <a class="view-btn mini" href="https://yusufnrg.github.io/bte311-dersi/hafta4/test1.html" target="_blank" rel="noopener noreferrer">Sınav Formu</a>
+                        </div>
+                    </td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 5</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 6</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 7</a></td>
                     <td data-label="Ödev Konusu">Lab Görevi</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
-                    <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/labgorevi.html
-" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
+                    <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/labgorevi.html" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 8</a></td>
-                    <td data-label="Ödev Konusu">hafta8 lab görevi</td>
+                    <td data-label="Ödev Konusu">Hafta 8 Lab Görevi</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
                     <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/lab%20gorevi/odev.html" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 9</a></td>
-                    <td data-label="Ödev Konusu">Hafta9 lab görevi</td>
+                    <td data-label="Ödev Konusu">Hafta 9 Lab Görevi</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
                     <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/labgorevi%20hafta9/rastgelegorseller.html" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 10</a></td>
-                    <td data-label="Ödev Konusu">hafta10 ödev</td>
+                    <td data-label="Ödev Konusu">Hafta 10 Ödev</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
                     <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/snake%20game/guncellenmis/snake.html" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 11</a></td>
-                    <td data-label="Ödev Konusu">Hafta11 Lab Görevi</td>
+                    <td data-label="Ödev Konusu">Hafta 11 Lab Görevi</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlandı</span></td>
                     <td data-label="Link"><a class="view-btn" href="https://yusufnrg.github.io/bte311-dersi/hafta_11_12_labgorevi/" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 12</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 13</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
                     <td data-label="Durum"><span class="status-chip">Tamamlanacak</span></td>
                     <td data-label="Link"><a class="view-btn" href="#" target="_blank" rel="noopener noreferrer">Ödevi Görüntüle</a></td>
                 </tr>
+
                 <tr>
                     <td data-label="Hafta"><a class="week-link" href="#" target="_blank" rel="noopener noreferrer">Hafta 14</a></td>
                     <td data-label="Ödev Konusu">Ödev başlığı</td>
@@ -332,15 +380,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
