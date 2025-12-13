@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Görev: Tablo 3</title>
+    <style>
+        body { font-family: 'Times New Roman', serif; padding: 20px; text-align: center; }
+        h2 { margin-bottom: 20px; }
+        
+        table {
+            width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse; /* Çizgileri tek çizgi yapar */
+        }
+        
+        td {
+            border: 1px solid #333; /* İnce gri/siyah çerçeve */
+            padding: 20px;
+            text-align: center;
+            vertical-align: middle;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        /* Görseldeki genişlik oranlarını yakalamak için */
+        .genis { width: 40%; }
+        .dar { width: 20%; }
+    </style>
+</head>
+<body>
+
+    <h2>HTML Table</h2>
+
+    <table>
+        <tr>
+            <td colspan="2">Cell 1</td>
+            <td class="dar">Cell 2</td>
+            <td class="dar">Cell 3</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3" class="dar">Cell 4</td>
+            <td class="dar">Cell 5</td>
+            <td class="dar">Cell 6</td>
+            <td class="dar">Cell 7</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">Cell 8</td>
+        </tr>
+
+        <tr>
+            <td>Cell 9</td>
+            <td colspan="2">Cell 10</td>
+        </tr>
+    </table>
+
+</body>
+</html>
